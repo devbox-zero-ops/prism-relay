@@ -146,17 +146,24 @@ export function createApp(): express.Express {
     if (!subredditName) throw new Error('Subreddit context unavailable');
     const today = getTodayUtcDate();
     const puzzle = getDailyPuzzle(today, 'daily');
-    return reddit.submitCustomPost({
+    const post = await reddit.submitCustomPost({
       subredditName,
-      title: `Prism Relay #${puzzle.puzzleNumber} — Daily Optical Puzzle (${today})`,
+      entry: 'default',
+      title: `Prism Relay #${puzzle.puzzleNumber} — Daily Optical Routing Puzzle (${today})`,
+      textFallback: {
+        text: `Play Prism Relay #${puzzle.puzzleNumber} (${today}) — route Amber & Cyan beams onto White photodiodes in ${puzzle.parOptics} par optics.`,
+      },
     });
+    console.log(`[PRISM_RELAY_POST_CREATED] id=${post.id} sub=${subredditName} url=${post.url}`);
+    return post;
   };
 
   app.post('/internal/on-app-install', async (_req, res) => {
     try {
       const post = await createDailyPost();
-      res.json({ status: 'ok', postId: post.id });
+      res.json({ status: 'ok', postId: post.id, url: post.url });
     } catch (err) {
+      console.error('[PRISM_RELAY_INSTALL_ERR]', err);
       res.status(500).json({ status: 'error', message: String(err) });
     }
   });

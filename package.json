@@ -1,6 +1,6 @@
 {
   "name": "prism-relay",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "description": "Prism Relay — Daily 60-second dual-wavelength optical routing puzzle for Reddit (Devvit Web)",
@@ -31,5 +31,6 @@
     "typescript": "^5.8.0",
     "vite": "^8.0.0",
     "vitest": "^5.1.0"
-  }
+  },
+  "license": "BSD-3-Clause"
 }

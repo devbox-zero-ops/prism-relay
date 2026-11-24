@@ -6,6 +6,15 @@ Every day at **00:00 UTC**, all players on the subreddit receive the exact same 
 
 ---
 
+## Live Links (Reddit Hackathon Submission)
+
+- **Devvit App Listing (Private per Hackathon Rules):** https://developers.reddit.com/apps/prism-relay
+- **Public Test Subreddit:** https://www.reddit.com/r/prism_relay_dev
+- **Live Interactive Reddit Post:** https://www.reddit.com/r/prism_relay_dev/comments/1y4rwfr/prism_relay_24_daily_optical_routing_puzzle/
+- **Standalone Browser Preview:** https://devbox-zero-ops.github.io/prism-relay/
+
+---
+
 ## Core Mechanics & Daily Community Loop
 
 - **Zero-Tutorial Tactile Bench:** Beams trace live in real time on a high-DPI `<canvas>` with harmonic Web Audio API feedback as you place or cycle optics.

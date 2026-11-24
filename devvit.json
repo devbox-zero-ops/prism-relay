@@ -33,9 +33,13 @@
     ]
   },
   "triggers": {
-    "onAppInstall": "/internal/on-app-install"
+    "onAppInstall": "/internal/on-app-install",
+    "onAppUpgrade": "/internal/on-app-install"
   },
   "scripts": {
     "build": "npm run build"
+  },
+  "dev": {
+    "subreddit": "prism_relay_dev"
   }
 }
